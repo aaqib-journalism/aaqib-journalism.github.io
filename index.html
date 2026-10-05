@@ -50,6 +50,10 @@ h2{font:400 clamp(2.8rem,8vw,5.2rem)/1 var(--serif);letter-spacing:-.02em}
 .item:hover,.item:focus-visible{padding-left:1.1rem}.item:hover:before,.item:focus-visible:before{transform:scaleY(1)}
 .item .t{font:400 clamp(1.35rem,2.5vw,1.7rem)/1.2 var(--serif)}
 .item .s{font-size:.82rem;opacity:var(--mute);white-space:nowrap}
+.m{display:flex;align-items:center;gap:.85rem}
+.k{--c:var(--ac);display:inline-flex;align-items:center;gap:.4rem;font-size:.74rem;font-weight:500;line-height:1;padding:.34rem .7rem;border-radius:99px;white-space:nowrap;color:var(--c);border:1px solid color-mix(in srgb,var(--c) 50%,transparent);background:color-mix(in srgb,var(--c) 10%,transparent)}
+.k:before{content:"";width:.38rem;height:.38rem;border-radius:50%;background:currentColor}
+.k-tv{--c:#8CCBF5}.k-movie{--c:#F2C14E}
 .item p{grid-column:1/-1;opacity:.75;font-size:.98rem}
 .more{display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:2rem;font-size:.98rem}
 .empty{border:1px dashed color-mix(in srgb,var(--ink) 35%,transparent);border-radius:.4rem;padding:2rem 1.4rem;font:italic 400 1.4rem/1.4 var(--serif)}
@@ -76,14 +80,14 @@ footer{padding:3rem 0 4rem;text-align:center;font-size:.85rem;opacity:.55}
 <h1>Mirza<br>Aaqib Beg</h1>
 <p class="role">Journalist. Entertainment, technology, culture and politics.</p>
 <div class="facts"><div><b>3,000+</b><small>articles published</small></div><div><b>5+</b><small>years in journalism</small></div></div>
-<div class="contact"><a class="ut" href="mailto:aaqib.journalism@gmail.com">Email</a><a class="ut" href="https://www.linkedin.com/in/mirzaaaqibbeg/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="ut" href="https://muckrack.com/mirzaaaqibbeg" target="_blank" rel="noopener noreferrer">Muck Rack</a></div>
+<div class="contact"><a class="ut" href="mailto:aaqib.journalism@gmail.com">Email</a><a class="ut" href="https://www.linkedin.com/in/mirzaaaqibbeg/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="ut" href="https://muckrack.com/mirzaaaqibbeg" target="_blank" rel="noopener noreferrer">Muck Rack</a><a class="ut" href="https://gamerant.com/author/mirza-aaqib-beg/" target="_blank" rel="noopener noreferrer">GameRant</a></div>
 <p class="cue">Scroll to read by beat. The page changes with each one.</p>
 </div>
 <div class="fieldw">
-<svg id="field" viewBox="-300 -300 600 600" role="group" aria-label="3,000 dots, one for each article. Sixteen highlighted dots link to featured stories.">
+<svg id="field" viewBox="-300 -300 600 600" role="group" aria-label="3,000 dots, one for each article. Thirty-one highlighted dots link to featured stories.">
 <defs><clipPath id="rev"><circle id="revc" r="0"><animate attributeName="r" from="0" to="330" dur="3.4s" begin="0.2s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".25 .6 .2 1"/></circle></clipPath></defs>
 <g clip-path="url(#rev)"><g class="spin" id="spin"></g></g></svg>
-<p class="cap">Each dot is a story. Sixteen are lit, and they open.</p>
+<p class="cap">Each dot is a story. Thirty-one are lit, and they open.</p>
 </div>
 </div>
 
@@ -93,7 +97,7 @@ footer{padding:3rem 0 4rem;text-align:center;font-size:.85rem;opacity:.55}
 <section class="beat" id="culture" data-bg="#2A1431" data-ink="#F6E8F0" data-ac="#FF77AE">
 <svg class="glyph" viewBox="0 0 54 54" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="6" width="36" height="42" rx="3"/><path d="M9 16h36M9 38h36M17 6v10M27 6v10M37 6v10M17 38v10M27 38v10M37 38v10"/><path d="M23 22l10 5-10 5z" fill="currentColor"/></svg>
 <h2>Culture &amp; Media</h2>
-<p class="sub">Anime, film and streaming coverage for GameRant and TheCinemaholic. Sixteen pieces, picked from over 3,000.</p>
+<p class="sub">Anime, TV and movie coverage for GameRant and TheCinemaholic. Thirty-one pieces, picked from over 3,000.</p>
 <div id="l-culture"></div>
 <div class="more"><a class="ut" href="https://gamerant.com/author/mirza-aaqib-beg/" target="_blank" rel="noopener noreferrer">All GameRant articles</a><a class="ut" href="https://thecinemaholic.com/author/mirza/" target="_blank" rel="noopener noreferrer">All TheCinemaholic articles</a><a class="ut" href="https://muckrack.com/mirzaaaqibbeg" target="_blank" rel="noopener noreferrer">Full archive on Muck Rack</a></div>
 </section>
@@ -127,27 +131,42 @@ footer{padding:3rem 0 4rem;text-align:center;font-size:.85rem;opacity:.55}
 <script>
 const G='GameRant',C='TheCinemaholic';
 const CULTURE=[
-[G,'Blue Lock: The Flow State, Explained','https://gamerant.com/blue-lock-the-flow-state-explained/'],
-[G,'Solo Leveling: How Much Has Sung Jin-Woo Changed Since Season 1?','https://gamerant.com/solo-leveling-how-much-has-sung-jin-woo-changed-since-season-1/'],
-[G,"'Long Time No See': Who Is the Mysterious Demon Challenging Zenitsu in the Infinity Castle Movie Trailer?",'https://gamerant.com/demon-slayer-infinity-castle-movie-trailer-zenitsu-demon/'],
-[G,'Demon Slayer: Infinity Castle Movie Will Reveal the Dark Secret Behind Shinobu’s Hatred of Doma','https://gamerant.com/demon-slayer-infinity-castle-movie-shinobu-doma-relationship/'],
-[C,'Attack on Titan Season 4 Finale Recap and Ending','https://thecinemaholic.com/attack-on-titan-season-4-finale-recap-and-ending/'],
-[G,'Demon Slayer Infinity Castle Surpasses Titanic to Become Japan\'s 3rd Highest Grossing Film, Are Spirited Away and Mugen Train Next to Fall?','https://gamerant.com/demon-slayer-infinity-castle-surpasses-titanic-japan-3rd-highest-grossing-film/'],
-[G,'Blue Lock: Rin Itoshi\'s Footballing Genius, Explained','https://gamerant.com/blue-lock-rin-itoshis-footballing-genius-explained/'],
-[G,'The Best Dabi Episodes in My Hero Academia','https://gamerant.com/my-hero-academia-best-dabi-episodes/'],
-[G,'My Hero Academia: 5 Best All Might Episodes, Ranked','https://gamerant.com/my-hero-academia-best-all-might-episodes/'],
-[G,'Blue Lock: What Makes Isagi Yoichi Such a Good Forward?','https://gamerant.com/blue-lock-what-makes-isagi-yoichi-such-a-good-forward/'],
-[C,'Is Flowers in the Attic Based on a True Story?','https://thecinemaholic.com/is-flowers-in-the-attic-based-on-a-true-story/'],
-[C,'Lifetime\'s Beware of the Midwife: Everything We Know','https://thecinemaholic.com/lifetimes-beware-of-the-midwife-everything-we-know/'],
-[C,'Lifetime\'s My Father\'s Other Family: Everything We Know','https://thecinemaholic.com/lifetimes-my-fathers-other-family-everything-we-know/'],
-[C,'Where Was Lifetime\'s Missing and Alone Filmed? Is It a True Story?','https://thecinemaholic.com/where-was-lifetimes-missing-and-alone-filmed-is-it-a-true-story/'],
-[C,'Where Was Netflix\'s The Swarm Filmed?','https://thecinemaholic.com/where-was-netflixs-the-swarm-filmed/'],
-[C,'Where Was Lifetime\'s Dirty Little Deeds Filmed? Is It a True Story?','https://thecinemaholic.com/where-was-lifetimes-dirty-little-deeds-filmed-is-it-a-true-story/']
+[G,"Blue Lock: The Flow State, Explained","https://gamerant.com/blue-lock-the-flow-state-explained/","Anime"],
+[C,"Is Hampstead a True Story?","https://thecinemaholic.com/is-hampstead-a-true-story/","Movie"],
+[G,"Solo Leveling: How Much Has Sung Jin-Woo Changed Since Season 1?","https://gamerant.com/solo-leveling-how-much-has-sung-jin-woo-changed-since-season-1/","Anime"],
+[C,"Where Was Whitstable Pearl Filmed? Is It a True Story?","https://thecinemaholic.com/where-was-whitstable-pearl-filmed-is-it-a-true-story/","TV"],
+[G,"'Long Time No See': Who Is the Mysterious Demon Challenging Zenitsu in the Infinity Castle Movie Trailer?","https://gamerant.com/demon-slayer-infinity-castle-movie-trailer-zenitsu-demon/","Anime"],
+[G,"Demon Slayer: Infinity Castle Movie Will Reveal the Dark Secret Behind Shinobu’s Hatred of Doma","https://gamerant.com/demon-slayer-infinity-castle-movie-shinobu-doma-relationship/","Anime"],
+[C,"Is Flowers in the Attic Based on a True Story?","https://thecinemaholic.com/is-flowers-in-the-attic-based-on-a-true-story/","Movie"],
+[C,"Where Was Lifetime’s Missing and Alone Filmed? Is it a True Story?","https://thecinemaholic.com/where-was-lifetimes-missing-and-alone-filmed-is-it-a-true-story/","Movie"],
+[G,"25 Best Must-Watch Anime For Solo Leveling Fans","https://gamerant.com/best-anime-like-solo-leveling/","Anime"],
+[C,"Is Spy City Based on a True Story?","https://thecinemaholic.com/is-spy-city-based-on-a-true-story/","TV"],
+[C,"Is Yellowstone’s Prequel 1883 on Netflix, HBO Max, Hulu, or Paramount?","https://thecinemaholic.com/is-yellowstones-prequel-1883-on-netflix/","TV"],
+[G,"Demon Slayer Infinity Castle Surpasses Titanic to Become Japan's 3rd Highest Grossing Film, Are Spirited Away and Mugen Train Next to Fall?","https://gamerant.com/demon-slayer-infinity-castle-surpasses-titanic-japan-3rd-highest-grossing-film/","Anime"],
+[C,"Attack on Titan Season 4 Finale Recap and Ending, Explained","https://thecinemaholic.com/attack-on-titan-season-4-finale-recap-and-ending/","Anime"],
+[C,"Where Was Netflix’s The Swarm Filmed?","https://thecinemaholic.com/where-was-netflixs-the-swarm-filmed/","Movie"],
+[C,"Best Horror Anime on Netflix","https://thecinemaholic.com/best-horror-anime-on-netflix/","Anime"],
+[C,"Best Detective Anime of All Time","https://thecinemaholic.com/best-detective-anime/","Anime"],
+[C,"Where is Netflix’s In From the Cold Filmed?","https://thecinemaholic.com/where-is-netflixs-in-from-the-cold-filmed/","TV"],
+[G,"Blue Lock: Rin Itoshi's Footballing Genius, Explained","https://gamerant.com/blue-lock-rin-itoshis-footballing-genius-explained/","Anime"],
+[G,"The Best Dabi Episodes In My Hero Academia","https://gamerant.com/my-hero-academia-best-dabi-episodes/","Anime"],
+[C,"Lifetime’s Beware of the Midwife: Everything We Know","https://thecinemaholic.com/lifetimes-beware-of-the-midwife-everything-we-know/","Movie"],
+[C,"Where Was Atypical Season 4 Filmed?","https://thecinemaholic.com/where-was-atypical-season-4-filmed/","TV"],
+[G,"Blue Lock: What Makes Isagi Yoichi Such a Good Forward?","https://gamerant.com/blue-lock-what-makes-isagi-yoichi-such-a-good-forward/","Anime"],
+[C,"Best Anime on HBO Max","https://thecinemaholic.com/best-anime-on-hbo-max/","Anime"],
+[C,"Where is Raising Dion Filmed?","https://thecinemaholic.com/where-is-raising-dion-filmed/","TV"],
+[C,"Is Mr Inbetween a True Story?","https://thecinemaholic.com/is-mr-inbetween-a-true-story/","TV"],
+[C,"Where Was Men (2022) Filmed?","https://thecinemaholic.com/where-was-men-2022-filmed/","Movie"],
+[C,"Lifetime’s My Father’s Other Family: Everything We Know","https://thecinemaholic.com/lifetimes-my-fathers-other-family-everything-we-know/","Movie"],
+[C,"Best Anime for Kids on Amazon Prime","https://thecinemaholic.com/best-anime-for-kids-on-amazon-prime/","Anime"],
+[C,"Best Korean Anime of All Time","https://thecinemaholic.com/best-korean-anime/","Anime"],
+[C,"Loved Pluto? Here Are 10 Similar Anime Just Like it","https://thecinemaholic.com/anime-like-pluto/","Anime"],
+[C,"Demon Slayer: Kimetsu no Yaiba Season 3 Finale Recap: A Connected Bond Daybreak and First Light","https://thecinemaholic.com/demon-slayer-kimetsu-no-yaiba-season-3-finale-and-ending-explained/","Anime"]
 ];
 const $=id=>document.getElementById(id),esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
 
-/* One dot per story, laid out as a sunflower spiral. Sixteen are lit and link to the featured articles. */
+/* One dot per story, laid out as a sunflower spiral. Thirty-one are lit and link to the featured articles. */
 const N=3000,K=5.112,pos=i=>{const a=i*2.399963,r=K*Math.sqrt(i+.5);return[(r*Math.cos(a)).toFixed(1),(r*Math.sin(a)).toFixed(1)]};
 const lit=CULTURE.map((c,k)=>Math.round(k*(N-300)/(CULTURE.length-1)+150));
 let d='<g class="dots" fill="currentColor">';
@@ -165,7 +184,7 @@ $('spin').querySelectorAll('a').forEach(a=>{
  ['mouseleave','blur'].forEach(e=>a.addEventListener(e,()=>tip.style.opacity=0))});
 
 /* Lists */
-$('l-culture').innerHTML=CULTURE.map(([o,t,u])=>`<a class="item" href="${u}" target="_blank" rel="noopener noreferrer"><span class="t">${esc(t)}</span><span class="s">${o}</span></a>`).join('');
+$('l-culture').innerHTML=CULTURE.map(([o,t,u,k])=>`<a class="item" href="${u}" target="_blank" rel="noopener noreferrer"><span class="t">${esc(t)}</span><span class="m"><span class="k k-${k.toLowerCase()}">${k}</span><span class="s">${o}</span></span></a>`).join('');
 let INDEX=[];
 function list(sec){
  const it=INDEX.filter(a=>a.section===sec);
